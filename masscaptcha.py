@@ -19,8 +19,10 @@ for user in users:
 
 	username = user[0]
 	password = user[1]
+	wifi_user = user[2]
+	wifi_pass = user[3]
 
-	subprocess.call(["sudo bash ./wifi.sh " + username + " " + password + " &>/dev/null", shell=True])
+	subprocess.call(["sudo bash ./wifi.sh " + wifi_user + " " + wifi_pass + " &>/dev/null", shell=True])
 
 	session = requests.Session()
 	session.trust_env = False
