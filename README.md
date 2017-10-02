@@ -13,4 +13,4 @@ Log in a list of users from different mac+ip+user agent combinations
 
 Enter credentials to `users.txt` in the following format `user pass wifi_user wifi_pass`
 
-`sudo python masscaptcha.py A1B2C3` (substitute the right captcha ofc)
+`sudo python masscaptcha.py ABCDEFG` (substitute the right captcha ofc)
