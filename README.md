@@ -5,6 +5,7 @@ Log in a list of users from different mac+ip+user agent combinations
 
 * Ubuntu/Debian
 * `%sudo ALL=(ALL) NOPASSWD: ALL` if getting any permission errors (you shouldn't)
+* If you automatically connect to wifi, uncheck the autoconnect checkbox in the Network Connections menu (by clicking on the wifi indicator / Edit Connections)
 
 # Installation
 `sudo bash install.sh`
