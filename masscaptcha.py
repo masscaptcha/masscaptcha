@@ -29,6 +29,10 @@ for user in users:
 	
 	credentials = {'ctl00$MainContent$Email':username, 'ctl00$MainContent$Password': password, 'ctl00$MainContent$captcha' : captcha}
 	headers = {'User-Agent': random_line("useragents.txt")}
+	
+	#simulate normal behavior (first request the login page)
+	session.get('https://catalog.inf.elte.hu/Account/Login')
+	
 	response = session.post('https://catalog.inf.elte.hu/Account/Login', data=credentials, headers=headers)
 
 	if "logged in" in response.text:
