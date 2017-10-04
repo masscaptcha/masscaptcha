@@ -3,24 +3,17 @@ import random
 import subprocess
 import sys
 
-def random_line(afile):
-    line = next(afile)
-    for num, aline in enumerate(afile):
-      if random.randrange(num + 2): continue
-      line = aline
-    return line
+def random_line(filename):
+    with open(filename) as f:
+        lines = [x.rstrip() for x in f.readlines()]
+        return random.choice(lines)
 
 with open("users.txt") as usersfile:
 	users = [x.rstrip().split(" ") for x in usersfile.readlines()]
 
 captcha = sys.argv[1]
 
-for user in users:
-
-	username = user[0]
-	password = user[1]
-	wifi_user = user[2]
-	wifi_pass = user[3]
+for username, password, wifi_user, wifi_pass in users:
 
 	subprocess.call(["sudo bash ./wifi.sh " + wifi_user + " " + wifi_pass + " &>/dev/null"], shell=True)
 
